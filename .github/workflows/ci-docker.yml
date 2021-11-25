@@ -17,6 +17,7 @@ jobs:
         password: ${{ secrets.PAT }}
 
     - name: Build the hello-world Docker image
+      environment: prod
       run: |
         docker build . --tag ghcr.io/dansible/hello-world:latest
         docker run ghcr.io/${{ github.actor }}/hello-world:latest
