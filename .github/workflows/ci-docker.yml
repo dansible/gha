@@ -5,6 +5,8 @@ on: [push]
 jobs:
   publish-hello-world-image:
     runs-on: ubuntu-latest
+    environment:
+      name: prod
 
     steps:
     - uses: actions/checkout@v2
@@ -17,8 +19,6 @@ jobs:
         password: ${{ secrets.PAT }}
 
     - name: Build the hello-world Docker image
-      environment:
-        name: prod
       run: |
         docker build . --tag ghcr.io/dansible/hello-world:latest
         docker run ghcr.io/${{ github.actor }}/hello-world:latest
