@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("This is an updated text. Everything is working.")
+	fmt.Println("Continuous Delivery is awesome!")
 }
